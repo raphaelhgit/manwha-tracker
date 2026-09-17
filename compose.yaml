@@ -1,0 +1,33 @@
+name: manwha
+
+services:
+  manwha:
+    container_name: manwha-tracker
+    build:
+      context: .
+      args:
+        VITE_BASE: /manwha/
+    ports:
+      - "8090:3000"
+    volumes:
+      - manwha-data:/data
+    env_file:
+      - .env
+    environment:
+      PORT: "3000"
+      DATA_DIR: /data
+      PUBLIC_DIR: /app/frontend/dist
+      NODE_ENV: production
+      TRUST_PROXY: "1"
+    networks:
+      - default
+      - media
+    restart: unless-stopped
+
+volumes:
+  manwha-data:
+
+networks:
+  media:
+    external: true
+    name: docker-media_default

@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build
+frontend/dist/
+dist/
+*.tsbuildinfo
+
+# Données locales (BDD, covers, imports perso)
+backend/data/
+data/
+/data/
+*.db
+*.db-shm
+*.db-wal
+backend/import-data.json
+backend/covers/
+covers/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs & temp
+*.log
+npm-debug.log*
+/tmp/
+*.tmp
+_stats.json
+_tmp_*
+
+# Scripts probe / one-off locaux
+backend/probe-*.mjs
+backend/probe-*.js
+backend/batch-add.mjs
+backend/batch-fix-*.mjs
+backend/fix-*.mjs
+
+# Docker volumes locaux (dev)
+.docker/
